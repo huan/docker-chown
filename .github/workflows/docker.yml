@@ -3,7 +3,7 @@ name: Docker
 on: [push]
 
 jobs:
-  build:
+  windows:
     name: Windows
     runs-on: windows-latest
     steps:
@@ -11,7 +11,7 @@ jobs:
       - run: docker pull --platform linux ubuntu:eoan
       - name: Reproduce Chown Problem
         run: docker build -t chown .
-
+  linux:
     name: Linux
     runs-on: ubuntu-latest
     steps:
