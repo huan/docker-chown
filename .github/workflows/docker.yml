@@ -4,14 +4,17 @@ on: [push]
 
 jobs:
   build:
-    name: Build
-    strategy:
-      matrix:
-        os: [windows-latest, ubuntu-latest]
+    name: Windows
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: docker pull --platform linux ubuntu:eoan
+      - name: Reproduce Chown Problem
+        run: docker build -t chown .
 
-    runs-on: ${{ matrix.os }}
+    name: Linux
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Reproduce Chown Problem
         run: docker build -t chown .
-
