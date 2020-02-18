@@ -8,3 +8,4 @@ os:
 
 script:
   - docker build -t chown .
+  - docker run chown
