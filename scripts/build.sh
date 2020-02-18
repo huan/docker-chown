@@ -3,3 +3,4 @@
 set -e
 
 docker build -t chown .
+docker run chown
