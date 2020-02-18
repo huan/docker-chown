@@ -1,3 +1,5 @@
+language: bash
+
 services:
   - docker
   
@@ -7,4 +9,4 @@ os:
   - windows
 
 script:
-  - ./scripts/build.sh
+  - docker build -t chown .
