@@ -1,0 +1,10 @@
+services:
+  - docker
+  
+os:
+  - linux
+  - osx
+  - windows
+
+script:
+  - ./scripts/build.sh
