@@ -7,11 +7,11 @@ jobs:
     name: Build
     strategy:
       matrix:
-        os: [macos-latest, windows-latest, ubuntu-latest]
+        os: [windows-latest, ubuntu-latest]
 
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
       - name: Reproduce Chown Problem
-        run: ./scripts/build.sh
+        run: docker build -t chown .
 
