@@ -2,7 +2,7 @@ FROM ubuntu:eoan as Builder
 
 RUN groupadd group \
   && useradd -m -g group user \
-  && echo 'user:gropu created'
+  && echo 'user:group created'
 
 COPY --chown=user:group entrypoint.sh /
 RUN ls -l /entrypoint.sh
